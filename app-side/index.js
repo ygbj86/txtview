@@ -1,26 +1,26 @@
-import { MessageBuilder } from '../shared/message'
-import { DEFAULT_TODOLIST } from './../utils/constants'
-const messageBuilder = new MessageBuilder()
+导入{    MessageBuilder     } 来自'../shared/message'
+ 从'。          
+const       MessageBuilder = New        MessageBuilder （（（（（（（（（（（）
 
-function getTodoList() {
-  return settings.settingsStorage.getItem('todoList') ?
-    JSON.parse(settings.settingsStorage.getItem('todoList')) : [...DEFAULT_TODOLIST]
+（getTodolist ）（（）{    （）{       ）{
+  返回设置。设置速度。getItem （''   '    '）？
+    todolist ... default_todolist 解析（ settingssetingstogegetItem （'todolist'             ）[               default_todolist                 ]
 }
-AppSideService({
-  onInit() {
-    messageBuilder.listen(() => {})
-    settings.settingsStorage.addListener('change', ({ key, newValue, oldValue }) => {
-      messageBuilder.call(getTodoList())
-    })
-    messageBuilder.on('request', (ctx) => {
-      const jsonRpc = messageBuilder.buf2Json(ctx.request.payload)
-      if (jsonRpc.method === 'GET_TODO_LIST') {
-        ctx.response({
-          data: { jsonrpc: 'hmrpcv1', result: getTodoList() },
-        })
+AppSideservice（{
+  （），，，，，，，，，，
+    MessageBuilder。 =>听（（）{                 }                 ）
+    settings。SettingsStorage 。
+      MessageBuilder。Call （（（（（（ （（（（（（ （（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（（
+    （（（（（（）））
+    MessageBuilder。， => on （'请求'  （ctx ）{
+      const  jsonrpc = MessageBuilder。。。buf2json （ctxrequestpayload ）
+      如果  （jsonrpc。method === 'get_todo_list'   ）{
+        CTX。反应
+          {  JSONRPC'HMRPCV1'ructionTodolist （（）}}}} }   }  }    }     }    }       }       }       }      }      }     }     }     }   }     }   }   }   }   }   }  }   }   }  }  }   }   }   }   }     }     }   }  }  }  }  }  }  }  }  }  }  }  }  }  }  }     }   }   }   }   }  }  }   }   }  } }  } }负​​​​      } } } } } } } } } }  }  }  }  }  }  }} }}  }} } }  } } } } } } } } } }} }} } } } } } } } }}}} } } } } _                                                                           负​​​​​​​                                                            } }  }  }  }  }  }  }  } }  } }  } } } }  } } } } } } }  } } }   } }  }  } }  }   }              
+        （（（））
       }
-    })
-  },
-  onRun() {},
-  onDestroy() {},
-})
+    （），，，，
+  }       ，，，，，
+  （}    ）{     }    ，
+  （在销毁（）{  } ，
+}（）（）
